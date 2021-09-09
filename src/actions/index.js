@@ -5,9 +5,9 @@ export const GET_URL_FAIL = 'GET_URL_FAIL'
 export const EXAMPLE_START = 'EXAMPLE_START'
 
 // this is just syntax for dispatch
-const fetchGIF = () => dispatch => {
-
-  dispatch({ type: GET_URL_START })
+const fetchGIF = () => {
+  return (dispatch) => {
+    dispatch({ type: GET_URL_START })
 
   // ajax call
   // you can only use await inside async functions
@@ -24,6 +24,7 @@ const fetchGIF = () => dispatch => {
       payload: error.message,
       type: GET_URL_FAIL
     }))
+  }
 }
 
 export default fetchGIF
